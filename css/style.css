@@ -1,0 +1,130 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(ellipse at center, #192d38 0, #211f2f 100%);
+    font-family: "Caveat", cursive;
+    height: 100vh;
+}
+
+header {
+    color: white;
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.container {
+    margin-top: 5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* min-height: 100vh; */
+    height: 100%;
+}
+
+.github {
+    width: 90px;
+    height: 90px;
+    background-color: rgb(100, 206, 170);
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-shadow: inset -6px 6px 5px 0px rgba(0, 0, 0, 0.75);
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+.github .logo {
+    background: url("../img/GitHub-Mark-120px-plus.png") no-repeat center
+        center/cover;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    margin-right: 9px;
+    margin-top: 17px;
+    transform: rotate(45deg);
+}
+
+.github .logo:hover {
+    background: url("../img/GitHub-Mark-120px-plus-orange.png") no-repeat center
+        center/cover;
+}
+
+.grid-container {
+    display: grid;
+    gap: 0px 0px;
+    height: 650px;
+    width: 650px;
+    background: linear-gradient(to right, #92fe9d, #00c9ff);
+    cursor: crosshair;
+    padding: 1rem;
+}
+
+form {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+}
+form button {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    background: #211f2f;
+    color: #fff;
+    border: 1px solid #666;
+    cursor: pointer;
+    outline: none;
+    transition: 0.2s all;
+}
+form button:active {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+form button:hover {
+    background: rgb(100, 206, 170);
+}
+
+form input {
+    font-size: 17px;
+    background: #211f2f;
+    color: #fff;
+    width: 50px;
+    padding: 0.3ch 5px;
+    max-height: 40px;
+    border: 1px solid #666;
+    outline: none;
+}
+form select {
+    font-size: 17px;
+    background: #211f2f;
+    color: #fff;
+    padding: 0.3ch 5px;
+    border: 1px solid #666;
+}
+
+footer {
+    border: 1px solid white;
+    width: 100%;
+    text-align: center;
+    color: rgb(100, 206, 170);
+    padding: 1rem;
+    letter-spacing: 5px;
+}
+#year {
+    font-size: 20px;
+}
+
+/*
+MEDIA query's
+smaller than or equal to 768 px (smartphones)
+larger than 768 px (small devices, tablets)
+larger than 992 px (medium devices)
+larger than 1200px (large devices)
+*/

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9a99710b3e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Etch-A-SketchPad</title>
+</head>
+
+<body>
+    <header>
+        <h1>Etch-A-SketchPad</h1>
+    </header>
+
+    <div class="github">
+        <a href="https://github.com/CatalinGheorghiu" target="_blank"><span class="logo"></span></a>
+    </div>
+
+    <div class="container">
+        <div class="grid-container"></div>
+        <form>
+            <label for="colors">Choose table color:</label>
+            <select id="colors" name="colors">
+                <option value="earth" selected>Back to Earth (default)</option>
+                <option value="vital">Vital Ocean</option>
+                <option value="shady">Shady Lane</option>
+                <option value="mello">Mello Yellow</option>
+                <option value="dusty">Dusty Cactus</option>
+                <option value="random">Random</option>
+            </select>
+            <label>Choose Columns x Rows:</label>
+            <select id="table" name="table">
+                <option value="" disabled selected>Select a size</option>
+                <option value="24" >24x24</option>
+                <option value="48">48x48</option>
+                <option value="60">60x60</option>
+                <option value="80">80x80</option>
+                <!-- <option value="random">Random</option> -->
+            </select>
+            <label>Refresh</label><button><i class="fas fa-sync-alt"></i></button>
+        </form>
+    </div>
+
+    <footer>
+        <p>Etch-A-SketchPad &#x262F; <span id="year"></span> &#8594; Ionut Gheorghiu</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
