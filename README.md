@@ -1,5 +1,5 @@
 <h1>Etch-A-SketchPad </h1>
-<img src="./img/creative-art.png">
+
 <small>* needs improvements for drawing</small>
 
 <p>A browser version of something between a sketchpad and an Etch-A-Sketch </p>
