@@ -1,10 +1,9 @@
 const gridContainer = document.querySelector(".grid-container");
-const input = document.querySelector("#table");
+const colorInputSelection = document.querySelector("#table");
 const refreshButton = document.querySelector(".refresh");
 const colorOption = document.querySelector("#colors");
-let refreshed = false;
 
-input.addEventListener("change", (e) => {
+colorInputSelection.addEventListener("change", (e) => {
     e.preventDefault();
     const inputValue = e.target.value;
     switch (inputValue) {
@@ -24,19 +23,27 @@ input.addEventListener("change", (e) => {
             gridSize(80);
             draw();
             break;
+        case "100":
+            gridSize(100);
+            draw();
+            break;
+        case "120":
+            gridSize(120);
+            draw();
+            break;
     }
 });
 
-function gridSize(x) {
+const gridSize = (x) => {
     gridContainer.style.gridTemplateColumns = `repeat(${x},1fr)`;
     gridContainer.style.gridTemplateRows = `repeat(${x},1fr)`;
-    const size = x * x;
-    for (let i = 1; i <= size; i++) {
+    const sizeOfGrid = x * x;
+    for (let i = 1; i <= sizeOfGrid; i++) {
         let div = document.createElement("div");
         div.setAttribute("data-item", "x");
         gridContainer.append(div);
     }
-}
+};
 
 colorOption.addEventListener("change", (e) => {
     let option = e.target.value;
@@ -71,8 +78,8 @@ colorOption.addEventListener("change", (e) => {
 });
 
 const draw = () => {
-    const gridCell = document.querySelectorAll("div[data-item*='x']");
-    gridCell.forEach((cell) => {
+    const gridCells = document.querySelectorAll("div[data-item*='x']");
+    gridCells.forEach((cell) => {
         cell.addEventListener("mouseover", function (e) {
             const table = e.target;
             table.style.background =
@@ -82,13 +89,10 @@ const draw = () => {
 };
 
 (function () {
-    //add event on click
     refreshButton.addEventListener("click", (e) => {
         window.location.reload();
     });
 })();
-
-//reset the table with the current color
 
 // Get the current year for the copyright
 document.getElementById("year").textContent = new Date().getFullYear();

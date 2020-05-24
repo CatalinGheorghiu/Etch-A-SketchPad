@@ -11,7 +11,6 @@ body {
 body {
     background: radial-gradient(ellipse at center, #192d38 0, #211f2f 100%);
     font-family: "Caveat", cursive;
-    /* min-height: 100%; */
     display: flex;
     flex-direction: column;
 }
