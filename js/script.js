@@ -1,5 +1,8 @@
 const gridContainer = document.querySelector(".grid-container");
 const input = document.querySelector("#table");
+const refreshButton = document.querySelector(".refresh");
+const colorOption = document.querySelector("#colors");
+let refreshed = false;
 
 input.addEventListener("change", (e) => {
     e.preventDefault();
@@ -35,8 +38,6 @@ function gridSize(x) {
     }
 }
 
-const colorOption = document.querySelector("#colors");
-
 colorOption.addEventListener("change", (e) => {
     let option = e.target.value;
     const randomColor1 = Math.floor(Math.random() * 16777215).toString(16);
@@ -45,6 +46,7 @@ colorOption.addEventListener("change", (e) => {
         case "earth":
             gridContainer.style.background =
                 "linear-gradient(to right, #92fe9d, #00c9ff)";
+            refresh(`linear-gradient(to right, #92fe9d, #00c9ff)`);
             break;
         case "vital":
             gridContainer.style.background =
@@ -69,14 +71,24 @@ colorOption.addEventListener("change", (e) => {
 });
 
 const draw = () => {
-    let gridCell = document.querySelectorAll("div[data-item*='x']");
-    gridCell.forEach((data) => {
-        data.addEventListener("mouseover", function (e) {
+    const gridCell = document.querySelectorAll("div[data-item*='x']");
+    gridCell.forEach((cell) => {
+        cell.addEventListener("mouseover", function (e) {
             const table = e.target;
             table.style.background =
                 "radial-gradient(ellipse at center, #192d38 0, #211f2f 100%)";
         });
     });
 };
+
+(function () {
+    //add event on click
+    refreshButton.addEventListener("click", (e) => {
+        window.location.reload();
+    });
+})();
+
+//reset the table with the current color
+
 // Get the current year for the copyright
 document.getElementById("year").textContent = new Date().getFullYear();
